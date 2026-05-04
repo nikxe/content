@@ -1,17 +1,263 @@
 # Program Inventory — Initial Sweep (Pre-filter)
 
 **Date built:** 2026-05-04
-**Status:** In progress
-**Scope:** Every English-taught MSc-level CS-discipline program at a German public university discovered via DAAD, Hochschulkompass, university CS faculty pages, and snowball searches. No hard filters applied yet.
+**Status:** Complete
+**Scope:** Every English-taught (or partially English-taught) MSc-level CS-discipline program at a German public university discovered via DAAD, Hochschulkompass, university CS faculty pages, and snowball searches across 53 universities. **No hard filters applied yet** — the universe before Section 3 / Section 4 of the brief.
 
-This is the "universe" before Section 3 / Section 4 filtering. Out-of-scope program types (Data Science, Bioinformatics, Wirtschaftsinformatik, etc.) are kept here for traceability and explicit exclusion in `02_filter_decisions.md`.
+Out-of-scope program titles (Data Science, Bioinformatics, Wirtschaftsinformatik, etc.) are kept here for traceability and explicit exclusion in `02_filter_decisions.md`. Disqualified-for-other-reasons programs (TUM €6,000/sem, GRE-required programs, German-only) are also kept with notes.
+
+**Total program rows:** 177
+**Universities surveyed:** 53
+**Universities with no English-taught CS MSc found:** 0 (all have at least a partial offering, but several have only out-of-scope offerings or are German-only with English fragments)
 
 ---
 
-## Index format
+## Master inventory table
 
-| # | University | Program | Language | Source URL | Notes |
-|---|---|---|---|---|---|
+| # | University | Short | Program | Lang | Intake | WS 26/27 deadline indicator | Tuition | URL | Notes |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | RWTH Aachen | RWTH | M.Sc. Computer Science | English | WS+SS | 1 Mar (CLOSED non-EU); 15 Jul EU | free (~€298 sem fee) | https://www.informatik.rwth-aachen.de/cms/informatik/studium/vor-dem-studium/~nhhb/masterstudiengaenge/?lidx=1 | GRE required for non-EU. Areas: Theoretical CS, Graphics&Interaction, HW/SW, AI&Data, SE. SS27 window opens 1 Jun 2026. |
+| 2 | RWTH Aachen | RWTH | M.Sc. Software Systems Engineering | English | WS only | 1 Mar (CLOSED non-EU) | free | https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/studiengaenge/liste-aktuelle-studiengaenge/studiengangbeschreibung/~bnhr/software-systems-engineering-m-sc/?lidx=1 | English-only. GRE required for non-EU. |
+| 3 | RWTH Aachen | RWTH | M.Sc. Media Informatics | English | WS only | unverified | free | https://www.b-it-center.de/b-it-programmes/msc-in-media-informatics/description | b-it joint with Bonn; possibly being phased out — verify. |
+| 4 | RWTH Aachen | RWTH | M.Sc. Human-Centered Intelligent Systems | English | WS only | unverified | free | https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/studiengaenge/liste-aktuelle-studiengaenge/studiengangbeschreibung/~bltdwv/human-centered-intelligent-systems-m-sc/?lidx=1 | b-it Bonn-Aachen. AI + HCI + system architecture. |
+| 5 | RWTH Aachen | RWTH | M.Sc. Computer Engineering | English | WS only | unverified (likely 1 Mar CLOSED) | free | https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/studiengaenge/liste-aktuelle-studiengaenge/studiengangbeschreibung/Computer-Engineering-M-Sc/?lidx=1 | Newly English-taught. HW/AI/Cyber-Physical Systems. |
+| 6 | RWTH Aachen | RWTH | M.Sc. Data Science | English | WS only | unverified | free | https://www.informatik.rwth-aachen.de/cms/informatik/studium/vor-dem-studium/~nhhb/masterstudiengaenge/?lidx=1 | OUT-OF-SCOPE (Data Science). |
+| 7 | RWTH Aachen | RWTH | M.Sc. Robotic Systems Engineering | English | WS only | unverified | tuition (continuing-ed) | https://www.academy.rwth-aachen.de/en/programs/masters-degree-programs/detail/msc-robotic-systems-engineering | OUT-OF-SCOPE (continuing-education paid). |
+| 8 | TU Berlin | TUB | M.Sc. Computer Science (Informatik) | English | WS+SS | 31 Aug 2026 (WS); 28 Feb 2027 (SS) | free (~€336 sem fee) | https://www.tu.berlin/en/eecs/academics-teaching/study-offer/masters-programs/msc-computer-science-informatik | English B2. VPD via uni-assist required for non-German first degree (per Section 12 known pitfall). |
+| 9 | TU Berlin | TUB | M.Sc. Computer Engineering | German + some English | WS+SS | unverified | free | https://www.tu.berlin/en/studying/study-programs/all-programs-offered/study-course/computer-engineering-m-sc | Mostly German. |
+| 10 | TU Berlin | TUB | M.Sc. ICT Innovation (EIT) | English | WS only | unverified (EIT process) | free + EIT scheme | https://www.tu.berlin/studieren/studienangebot/gesamtes-studienangebot/studiengang/ict-innovation-m-sc | EIT Digital double-degree. Tracks: Autonomous Systems, Cloud/Network, Data Science, Embedded, HCI/Design. |
+| 11 | TU Berlin | TUB | M.Sc. Computational Neuroscience | English | WS only | unverified | free | https://www.tu.berlin/en/studying/study-programs/all-programs-offered/study-course/computational-neuroscience-m-sc | OUT-OF-SCOPE (Cognitive/Neuroscience). |
+| 12 | TU Darmstadt | TUDA | M.Sc. Computer Science | English | WS+SS | 15 Jul (WS); 15 Jan (SS) | free (~€370 sem fee) | https://www.informatik.tu-darmstadt.de/studium_fb20/im_studium/studiengaenge_liste/computer_science_msc.en.jsp | Specialisations: Data Science, Visual Computing, Distributed Computing. **Paper docs by post (Section 12).** |
+| 13 | TU Darmstadt | TUDA | M.Sc. Informatik | German | WS+SS | 15 Jul (WS) | free | https://www.informatik.tu-darmstadt.de/studium_fb20/im_studium/studiengaenge_liste/informatik_msc.en.jsp | German-taught counterpart. |
+| 14 | TU Darmstadt | TUDA | M.Sc. IT Security | English | WS+SS | 15 Jul (WS) | free | https://www.informatik.tu-darmstadt.de/studium_fb20/im_studium/studiengaenge_liste/itsecurity_msc.en.jsp | Fully English. C1 English. |
+| 15 | TU Darmstadt | TUDA | M.Sc. Artificial Intelligence and Machine Learning | English | WS+SS | 15 Jul (WS) | free | https://www.informatik.tu-darmstadt.de/studium_fb20/im_studium/studiengaenge_liste/aim_msc.en.jsp | DFKI / hessian.AI affiliation. **Strong AI/ML target.** |
+| 16 | TU Darmstadt | TUDA | M.Sc. Distributed Software Systems | likely English | unverified | unverified | free | https://www.informatik.tu-darmstadt.de/studium_fb20/vor_dem_studium/uebersicht_studiengaenge/index.en.jsp | Verify language. |
+| 17 | TU Darmstadt | TUDA | M.Sc. Visual Computing | likely English | unverified | unverified | free | https://www.informatik.tu-darmstadt.de/studium_fb20/vor_dem_studium/uebersicht_studiengaenge/index.en.jsp | May be track within MSc CS — verify. |
+| 18 | TU Dresden | TUD | M.Sc. Computer Science | English | WS only | 15 Jul (international) | free (~€290 sem fee) | https://tu-dresden.de/ing/informatik/studium/studienangebot/master-studiengaenge/m-sc-computer-science | Tracks: Open Track, Distributed Systems Engineering. **uni-assist routing for foreign-HZB (Section 12).** |
+| 19 | TU Dresden | TUD | M.Sc. Distributed Systems Engineering | English | WS only | discontinuing | free | https://tu-dresden.de/ing/informatik/studium/studienangebot/master-studiengaenge/distributed-systems-engineering | Standalone discontinuing → track in MSc CS. |
+| 20 | TU Dresden | TUD | M.Sc. Computational Modeling and Simulation | English | WS only | unverified | free | https://tu-dresden.de/ing/informatik/studium/studienangebot/master-studiengaenge/computational-modeling-and-simulation | 7 application tracks incl. Visual Computing, Applied AI, HPC. |
+| 21 | TU Dresden | TUD | M.Sc. Computational Logic | English | WS only | discontinuing | free | https://tu-dresden.de/ing/informatik/studium/studienangebot/master-studiengaenge/master-computational-logic | International joint EM-style. May be closing. |
+| 22 | TU Dresden | TUD | M.Sc. Nanoelectronic Systems | English | WS only | unverified | free | https://tu-dresden.de/studium/vor-dem-studium/studienangebot/sins/sins_studiengang?autoid=1858&set_language=en | EE/CE faculty — borderline. |
+| 23 | TU Hamburg | TUHH | M.Sc. Computer Science | English | WS+SS | 15 Jul (WS); 15 Jan (SS) | free (~€340 sem fee) | https://www.tuhh.de/tuhh/en/studying/before-studying/degree-courses/masters-programs/computer-science | Mandatory pre-check Dec 1–Feb 1. Majors: Computer&SW Eng, Intelligence Eng, Mathematics. |
+| 24 | TU Hamburg | TUHH | M.Sc. Computer Science in Engineering | English | WS+SS | 15 Jul (WS) | free | https://www.tuhh.de/tuhh/en/studying/before-studying/degree-courses/masters-programs/computer-science-in-engineering | CS applied to engineering. |
+| 25 | TU Hamburg | TUHH | M.Sc. Information and Communication Systems (ICS) | English | WS only | likely 15 Jul | free | https://www.tuhh.de/tuhh/en/studying/before-studying/degree-courses/international-study-programs/information-and-communication-systems | Networking infrastructure. |
+| 26 | TU Hamburg | TUHH | M.Sc. Microelectronics and Microsystems | English | WS only | unverified | free | https://www.tuhh.de/tuhh/en/studying/before-studying/degree-courses/international-study-programs/microelectronics-and-microsystems | EE/CE-leaning. |
+| 27 | KIT | KIT | M.Sc. Computer Science | English | WS+SS | 15 Jun (WS); intl portal opens 15 May 2026 | €1,500/sem (BW non-EU) + ~€170 fee | https://www.sle.kit.edu/english/vorstudium/master-computer-science.php | New from SS 2025. **GRE/GATE required for non-EU.** TOEFL 90 / IELTS 6.5. |
+| 28 | KIT | KIT | M.Sc. Informatics | German | WS+SS | 15 Jun (WS) | €1,500/sem (BW non-EU) | https://www.sle.kit.edu/english/vorstudium/master-informatics.php | German-taught counterpart. |
+| 29 | KIT | KIT | M.Sc. Electrical Eng & Information Tech | German + selected English | WS+SS | 15 Jun (WS) | €1,500/sem (BW non-EU) | https://www.sle.kit.edu/english/vorstudium/master-electrical-engineering-information-technology.php | Mostly German. |
+| 30 | Uni Stuttgart | Stutt | M.Sc. Computer Science | English | WS+SS | 15 Jan (WS — CLOSED); 15 Jul (SS) | €1,500/sem (BW non-EU) + sem fee | https://www.uni-stuttgart.de/en/study/study-programs/Computer-Science-M.Sc.-00001/ | Specialisations: Autonomous Systems, Service Tech&Eng, Visual Computing. C1. **WS 26/27 CLOSED.** |
+| 31 | Uni Stuttgart | Stutt | M.Sc. INFOTECH | English | WS only | 15 Jan (CLOSED) | €1,500/sem (BW non-EU) | https://www.infotech.uni-stuttgart.de/ | International EE+CS. **WS 26/27 CLOSED.** |
+| 32 | Uni Stuttgart | Stutt | M.Sc. Autonomous Systems | unverified | unverified | unverified | €1,500/sem | https://www.daad.de/en/studying-in-germany/universities/all-degree-programmes/detail/university-of-stuttgart-autonomous-systems-w63988/?hec-id=w63988 | May be track of MSc CS — verify. |
+| 33 | Leibniz Hannover | LUH | M.Sc. Computer Science | English & German | WS+SS | 31 May (WS); 30 Nov (SS) non-EU | free (~€440 sem fee incl. transit) | https://www.uni-hannover.de/en/studium/studienangebot/info/studiengang/detail/computer-science-1 | C1 English OR C1 German. Specialisations: Data Science, HCC, Systems CS. **VPD required (Section 12).** |
+| 34 | Leibniz Hannover | LUH | M.Sc. AI-driven Mechatronics and Robotics | English | WS+SS | 31 May (WS); 30 Nov (SS) | free | https://www.uni-hannover.de/en/studium/studienangebot/info/studiengang/detail/ai-driven-mechatronics-and-robotics | Joint Mech+EE/CS+Civil. |
+| 35 | Leibniz Hannover | LUH | M.Sc. Computer Engineering | unverified | unverified | unverified | free | https://www.uni-hannover.de/en/studium/studienangebot/info/studiengang/detail/computer-engineering-1 | Verify English. |
+| 36 | HU Berlin | HUB | M.Sc. Computer Science (Informatik) | German + English electives | WS+SS | unverified non-EU; 14 Feb (WS 25/26 ref CLOSED) | free | https://www.hu-berlin.de/en/studies/counselling/course-catalogue/programme-descriptions/infmono | Primary German. C1 German required. |
+| 37 | HU Berlin | HUB | M.Sc. Information Systems | English & German | WS only | unverified | free | https://www.wiwi.hu-berlin.de/en/Professorships/bwl/wi/master_information_system/master_is_en | OUT-OF-SCOPE (business IS). C1 English + B1 German. |
+| 38 | HU Berlin | HUB | M.Sc. Computational Neuroscience | English | WS only | unverified | free | https://www.bccn-berlin.de/master-program-application.html | OUT-OF-SCOPE (Cognitive/Neuro). Joint w/ TU Berlin. |
+| 39 | FU Berlin | FUB | M.Sc. Computer Science (Informatik) | German + English exception | WS+SS | 31 May (WS); 15 Jan (SS) | free | https://www.fu-berlin.de/en/studium/studienangebot/master/informatik/index.html | DSH (German) required for non-German first-degree. |
+| 40 | FU Berlin | FUB | M.Sc. Data Science | English | WS only | 31 May | free | https://www.fu-berlin.de/en/studium/studienangebot/master/data-science/index.html | OUT-OF-SCOPE (Data Science). |
+| 41 | FU Berlin | FUB | M.Sc. Bioinformatics | English | WS only | 31 May (window 20 Apr–31 May) | free | https://www.mi.fu-berlin.de/en/bioinf/stud/studieninteressierte/index.html | OUT-OF-SCOPE (Bioinformatics). |
+| 42 | FU Berlin | FUB | M.Sc. Computational Sciences | unverified | unverified | unverified | free | https://www.fu-berlin.de/en/studium/studienangebot/master/ | Verify language. |
+| 43 | HPI Potsdam | HPI | M.Sc. Computer Science | English | WS+SS | 1 Jun (WS); 1 Dec (SS) | free | https://hpi.de/en/studies/computer-science-msc/ | Tracks: Security Engineering, Systems, Data, AI, Algorithms, Digital Health. C1. **Apply via HPI portal (Section 12).** |
+| 44 | HPI Potsdam | HPI | M.Sc. Cybersecurity | English | WS+SS | 1 Jun (WS) | free | https://hpi.de/en/studies/before-your-studies/degree-programs/master.html | Phasing into MSc CS Security Engineering track. |
+| 45 | HPI Potsdam | HPI | M.Sc. Data Engineering | English | WS only | 1 Jun (WS) | free | https://hpi.de/en/studies/before-your-studies/degree-programs/master.html | OUT-OF-SCOPE (Data Engineering). Phasing out. |
+| 46 | HPI Potsdam | HPI | M.Sc. Digital Health | English | WS only | 1 Jun (WS) | free | https://hpi.de/en/studies/before-your-studies/degree-programs/master.html | OUT-OF-SCOPE (Medical Inf). |
+| 47 | HPI Potsdam | HPI | M.Sc. IT-Systems Engineering | English | WS only | 1 Jun (WS) | free | https://hpi.de/en/studies/before-your-studies/degree-programs/master.html | Now part of MSc CS Systems track per restructure. |
+| 48 | HPI Potsdam | HPI | M.Sc. Software Systems Engineering | English | WS only | 1 Jun (WS) | free | https://hpi.de/en/studies/before-your-studies/degree-programs/master.html | Verify if standalone after restructure. |
+| 49 | Uni Potsdam | UP | M.Sc. Computer Science | English | WS+SS | unverified (likely 15 Jul WS) | free | https://www.uni-potsdam.de/en/studium/what-to-study/master/computer-science | Joint Faculty of Digital Engineering with HPI. C1. 6 tracks + Open Track. |
+| 50 | Uni Potsdam | UP | M.Sc. Cognitive Systems: Language, Learning and Reasoning | English | WS only | unverified | free | https://www.ling.uni-potsdam.de/cogsys/ | OUT-OF-SCOPE (Cognitive/Comp Linguistics). |
+| 51 | BTU Cottbus-Senftenberg | BTU | M.Sc. Computer Science | English | WS+SS | 15 Jul (WS); 15 Jan (SS) | free (~€300 sem fee) | https://www.b-tu.de/en/informatik-ms | English B2/C1. Tracks: Fundamentals, Practical, Applied/Technical CS. |
+| 52 | BTU Cottbus-Senftenberg | BTU | M.Sc. Artificial Intelligence | English | WS+SS | 15 Jul (WS); 15 Jan (SS) | free | https://www.b-tu.de/en/artificial-intelligence-ms | Explainable AI focus. |
+| 53 | BTU Cottbus-Senftenberg | BTU | M.Sc. Cyber Security | English | WS+SS | 15 Jul (WS); 15 Jan (SS) | free | https://www.b-tu.de/en/cybersecurity-ms | International programme. |
+| 54 | BTU Cottbus-Senftenberg | BTU | M.Sc. Information and Media Technology | English | WS+SS | unverified | free | https://www.b-tu.de/en/imt-ms | HW + SW for info/media. |
+| 55 | TU Chemnitz | TUC | M.Sc. Computer Science | English & German | WS+SS | 15 Jul (WS); 15 Jan (SS) | free (~€280 sem fee) | https://www.tu-chemnitz.de/informatik/studium/studiengaenge/ma_informatik.php.en | A1 German req at admission; A2 by end of sem 3. |
+| 56 | TU Chemnitz | TUC | M.Sc. Web Engineering | English | WS+SS | 15 Jul (WS); 15 Jan (SS) | free | https://www.tu-chemnitz.de/informatik/studium/studiengaenge/ma_web_engineering.php.en | A1 German req at admission. |
+| 57 | TU Chemnitz | TUC | M.Sc. Automotive Software Engineering | English & German | WS only | 15 Jul (WS) | free | https://www.tu-chemnitz.de/informatik/studium/studiengaenge/ma_automotive_software_engineering.php.en | 100% lectures EN; thesis EN/DE. AUTOSAR, ESS. |
+| 58 | TU Chemnitz | TUC | M.Sc. Embedded Systems | English | WS+SS | 15 Jul (WS); 15 Jan (SS) | free | https://www.tu-chemnitz.de/etit/studium/stugang/index.php.en?page=m_es | EE/ETIT faculty. A1 German req. |
+| 59 | TU Chemnitz | TUC | M.Sc. Information and Communication Systems | English | WS+SS | 15 Jul (WS) | free | https://www.tu-chemnitz.de/etit/studium/stugang/?page=m_is | EE/ETIT. |
+| 60 | TU Ilmenau | TUI | M.Sc. Research in Computer & Systems Engineering | English | WS+SS | 15 May (WS, non-EU); 15 Mar (SS, non-EU) | free (~€250 sem fee + €75 app fee) | https://www.tu-ilmenau.de/en/study/before-the-study/range-of-courses/master/research-in-computer-systems-engineering-msc | Research-oriented. CS+automation+EE. |
+| 61 | TU Ilmenau | TUI | M.Sc. Computer Science | German + some English | WS+SS | unverified | free | https://www.tu-ilmenau.de/en/study/before-the-study/range-of-courses/master/computer-science-msc | Primary German. |
+| 62 | TU Ilmenau | TUI | M.Sc. Communications and Signal Processing | English | WS only | likely 15 May (non-EU) | free | https://www.tu-ilmenau.de/en/study/before-the-study/range-of-courses/master/communications-and-signal-processing-msc | EE faculty. Online study available. |
+| 63 | TU Ilmenau | TUI | M.Sc. Electrical Eng & Information Tech | English & German | WS+SS | unverified | free | https://www.tu-ilmenau.de/en/study/before-the-study/range-of-courses/master/electrical-engineering-and-information-technology-msc | Specialisations incl. AI and Quantum Eng. |
+| 64 | OVGU Magdeburg | OVGU | M.Sc. Data and Knowledge Engineering | English & German | WS+SS | 15 May (WS, intl); 15 Nov (SS) | free (~€140 sem fee) | https://www.ovgu.de/unimagdeburg/en/Study/Study+Programmes/Master/Data+and+Knowledge+Engineering-p-17625.html | OUT-OF-SCOPE (Data direction). C1 English/German. GPA min 2.30. |
+| 65 | OVGU Magdeburg | OVGU | M.Sc. Digital Engineering | English & German | WS+SS | 15 May (WS); 15 Nov (SS) | free | https://www.ovgu.de/unimagdeburg/en/Study/Study+Programmes/Study+Programmes+in+English/Digital+Engineering-p-17626.html | Engineering + CS. Min GPA 2.50. |
+| 66 | OVGU Magdeburg | OVGU | M.Sc. Computer Science (Informatik) | German | WS+SS | 15 May (WS); 15 Nov (SS) | free | https://www.ovgu.de/unimagdeburg/en/Study/Study+Programmes/Master/Computer+Science-p-17637.html | German-taught primarily. |
+| 67 | OVGU Magdeburg | OVGU | M.Sc. Visual Computing | English | WS+SS | 15 May (WS); 15 Nov (SS) | free | https://www.ovgu.de/unimagdeburg/en/Study/Study+Programmes/Master/Visual+Computing-p-17624.html | English-taught. |
+| 68 | OVGU Magdeburg | OVGU | M.Sc. Medical Systems Engineering | English | SS only | 15 Nov (SS) | free | https://uni-magdeburg.de/unimagdeburg/en/Study/Study+Programmes/Master/Medical+Systems+Engineering-p-17659.html | OUT-OF-SCOPE (Medical Inf-leaning). |
+| 69 | Uni Bremen | UB | M.Sc. Computer Science (Informatik) | German + English mixed | WS+SS | likely 15 Jul (WS) unverified | free (~€420 sem fee) | https://www.uni-bremen.de/en/studies/orientation-application/offered-study-program/dbs/study/26 | Specialisations: Security&Quality, AI, Digital Media&Interaction, Visual&Medical Computing. Mostly German. |
+| 70 | Uni Bremen | UB | M.Sc. AI and Intelligent Systems (AIIS) | English | WS only | unverified | free | https://www.uni-bremen.de/en/studies/orientation-application/offered-study-program/dbs/study/324 | Majors: Cognition-Enabled Robotics, ML&Cognitive Systems. |
+| 71 | Uni Bremen | UB | M.Sc. Communication and Information Technology | English | WS only | likely 15 Jul | free | https://www.uni-bremen.de/en/faculty-1-physics-electrical-engineering/studies/degree-programs/communication-and-information-technology-cit-msc | Physics/EE faculty. **Compulsory German class sem 1.** |
+| 72 | Uni Bremen | UB | M.Sc. Digital Media (Media Informatics) | English | WS only | 31 May (window 1 Apr–31 May) | free | https://digitalmedia-bremen.de/profile/master/ | Joint w/ HfK Bremen. |
+| 73 | Uni Bremen | UB | M.Sc. Space Sciences and Technologies | English | WS only | unverified | free | https://www.uni-bremen.de/en/faculty-1-physics-electrical-engineering/studies/degree-programs/space-sciences-and-technologies-space-st-msc | Physics/EE. C1. |
+| 74 | Uni Bremen | UB | M.Sc. Systems Engineering | unverified | unverified | unverified | free | https://www.uni-bremen.de/en/studies/orientation-application/offered-study-program/dbs/study/39 | Verify language. |
+| 75 | Uni Bremen | UB | M.Sc. Control, Microsystems, Microelectronics | English | WS only | unverified | free | https://www.uni-bremen.de/en/studies/orientation-application/offered-study-program/international-degree-programs | EE-leaning. |
+| 76 | LMU München | LMU | M.Sc. Informatik | German + English electives | WS only | 15 Jul (open) | free | https://www.ifi.lmu.de/studium/studiengaenge/master/master_informatik/bewerbung/ | Primary German. |
+| 77 | LMU München | LMU | M.Sc. Computational Linguistics | English & German | WS only | likely 15 Jul | free | https://www.cis.uni-muenchen.de/ | OUT-OF-SCOPE (Comp Linguistics). |
+| 78 | LMU München | LMU | M.Sc. Bioinformatics (joint LMU+TUM) | English & German | WS only | 15 Jul | free at LMU; €6k/sem at TUM | https://www.tum.de/en/studies/degree-programs/detail/bioinformatics-master-of-science-msc-1 | OUT-OF-SCOPE (Bioinformatics). |
+| 79 | LMU München | LMU | M.Sc. Data Science (Elite) | English | — | DISCONTINUED | n/a | https://www.m-datascience.mathematik-informatik-statistik.uni-muenchen.de/ | Last intake WS 24/25. |
+| 80 | TU München | TUM | M.Sc. Informatics | English | WS+SS | 31 May 2026 (open) | **€6,000/sem (non-EU)** | https://www.cit.tum.de/en/cit/studies/degree-programs/master-informatics/ | OUT-OF-SCOPE (tuition). Tracks incl. ML, robotics, graphics, theory, security. |
+| 81 | TU München | TUM | M.Sc. Data Engineering and Analytics | English | WS+SS | 31 May | **€6,000/sem (non-EU)** | https://www.cit.tum.de/en/cit/studies/degree-programs/ | OUT-OF-SCOPE (tuition + Data title). |
+| 82 | TU München | TUM | M.Sc. Robotics, Cognition, Intelligence | English & German | WS+SS | 31 May | **€6,000/sem (non-EU)** | https://www.in.tum.de/en/for-prospective-students/masters-programs/robotics-cognition-intelligence-msc/ | OUT-OF-SCOPE (tuition). |
+| 83 | TU München | TUM | M.Sc. Computational Science and Engineering | English | WS+SS | 31 May | **€6,000/sem (non-EU)** | https://www.tum.de/en/studies/degree-programs/detail/computational-science-and-engineering-cse-master-of-science-msc | OUT-OF-SCOPE (tuition). |
+| 84 | TU München | TUM | M.Sc. Bioinformatics (joint LMU+TUM) | English & German | WS+SS | 15 Jul | **€6,000/sem at TUM** | https://www.tum.de/en/studies/degree-programs/detail/bioinformatics-master-of-science-msc-1 | OUT-OF-SCOPE (tuition + Bio). |
+| 85 | FAU Erlangen-Nürnberg | FAU | M.Sc. Artificial Intelligence | English | WS+SS | 31 May 2026 (open) | free + €100 non-EU app fee | https://www.fau.eu/degree-program/artificial-intelligence-ai-m-sc/ | **GRE/GATE >60th pctile required for non-EU from WS 26/27. Max 3 apps per non-EU applicant.** |
+| 86 | FAU Erlangen-Nürnberg | FAU | M.Sc. Data Science | English | WS+SS | 31 May | free + €100 fee | https://www.fau.eu/degree-program/data-science-m-sc/ | OUT-OF-SCOPE (Data Science) + GRE required. |
+| 87 | FAU Erlangen-Nürnberg | FAU | M.Sc. Computational Engineering | English | WS+SS | 31 May | free + €100 fee | https://www.fau.eu/degree-program/computational-engineering-ce-m-sc | GRE/GATE required for non-EU. |
+| 88 | FAU Erlangen-Nürnberg | FAU | M.Sc. Information and Communication Technology | English | WS+SS | 31 May | free + €100 fee | https://www.fau.eu/degree-program/information-and-communication-technology-iuk-m-sc/ | EE+CS. GRE required. |
+| 89 | FAU Erlangen-Nürnberg | FAU | M.Sc. Communications and Multimedia Engineering | English | WS only | 31 May | free + €100 fee | https://www.fau.eu/degree-program/communications-and-multimedia-engineering-m-sc/ | EE faculty. GRE required. |
+| 90 | FAU Erlangen-Nürnberg | FAU | M.Sc. Advanced Signal Processing and Communications Engineering | English | WS only | 31 May | free + €100 fee | https://www.asc.studium.fau.de/ | Elite — borderline CS. |
+| 91 | FAU Erlangen-Nürnberg | FAU | M.Sc. International Information Systems | English | WS+SS | 31 May | free + €100 fee | https://www.fau.eu/degree-program/international-information-systems-iis-m-sc | OUT-OF-SCOPE (business IS). |
+| 92 | FAU Erlangen-Nürnberg | FAU | M.Sc. Informatik | German | WS+SS | unverified | free | https://www.fau.eu/degree-program/informatik-m-sc | German-taught. |
+| 93 | FAU Erlangen-Nürnberg | FAU | M.Sc. Medical Engineering | English (selected tracks) | WS+SS | 31 May | free + €100 fee | https://www.fau.eu/degree-program/medical-engineering-m-sc | OUT-OF-SCOPE (Medical Eng). |
+| 94 | Uni Passau | Pass | M.Sc. Computer Science | English (3 tracks) | WS+SS | 31 May (non-EU, WS) | free | https://www.uni-passau.de/en/msc-computer-science | English fully via tracks: InfComm, ITS, ITSecRel. GPA 2.7. **Some specialisations need German B2 mid-program.** |
+| 95 | Uni Passau | Pass | M.Sc. Information Systems | English (selected tracks) | WS+SS | 31 May | free | https://www.uni-passau.de/en/msc-infosys | OUT-OF-SCOPE (business IS). AI&Data-Driven Business track full English. |
+| 96 | Uni Bayreuth | UBT | M.Sc. Computer Science | English | WS+SS | 17 Jul 2026 (WS) | free | https://www.uni-bayreuth.de/en/master/computer-science | **GPA 2.5 cutoff (applicant 2.4 just clears).** German A1 required. IELTS 6.5. |
+| 97 | Uni Bayreuth | UBT | M.Sc. Applied Computer Science | German | WS+SS | unverified | free | https://www.uni-bayreuth.de/en/master/applied-computer-science | German-language. |
+| 98 | Uni Bayreuth | UBT | M.Sc. Informatik (German) | German | WS+SS | unverified | free | https://www.uni-bayreuth.de/en/master/computer-science-german | German variant. |
+| 99 | Uni Würzburg | UWue | M.Sc. Computer Science | English & German | WS+SS | 17 Jul 2026 (WS) | free | https://www.informatik.uni-wuerzburg.de/en/studies/degree-programmes/master-computer-science/ | C1 English OR B2 German. Specialisations: theory, embedded, games eng, HCI, intelligent systems, internet tech, aerospace info, SE. ≥100 ECTS CS in BSc required. |
+| 100 | Uni Augsburg | UAug | M.Sc. Computer Science (Informatik) | English | WS+SS | 10 Aug 2026 (WS) | free | https://www.uni-augsburg.de/en/studium/studienangebot/uebersicht/computer-science-msc/ | Fully English possible. GPA 2.7, English B2 + German A2 (or German B2). |
+| 101 | Uni Augsburg | UAug | M.Sc. Software Engineering (Elite) | English | WS only | unverified | free | https://www.uni-augsburg.de/en/studium/studienangebot/uebersicht/software-engineering-elite-graduate-programme-msc/ | Joint w/ TUM+LMU, Bavarian Elite Network. |
+| 102 | Uni Augsburg | UAug | M.Sc. Computer Science in Engineering | English | WS+SS | unverified | free | https://www.uni-augsburg.de/en/fakultaet/fai/informatik/studienangebot/msc-inginf/ | CS-engineering hybrid. |
+| 103 | Uni Augsburg | UAug | M.Sc. Geoinformatics | English | WS+SS | unverified | free | https://www.uni-augsburg.de/en/studium/studienangebot/uebersicht/geoinformatics-msc/ | OUT-OF-SCOPE (Geoinformatics). |
+| 104 | Uni Regensburg | URegb | M.Sc. Computer Science | English | WS+SS | 1 Jun 2026 (open) | free | https://www.uni-regensburg.de/en/informatics-data-science/study/prospective-students/msc-computer-science | New international program. Specialisations: Core CS, Bioinformatics, HCC, Information Systems. GPA 2.5. |
+| 105 | Uni Heidelberg | UHD | M.Sc. Data and Computer Science | English | WS+SS | 15 Mar 2026 (CLOSED) | €1,500/sem (BW non-EU) | https://www.uni-heidelberg.de/en/study/all-subjects/computer-science/data-and-computer-science-master | OUT-OF-SCOPE (Data in title) + WS 26/27 CLOSED. |
+| 106 | Uni Heidelberg | UHD | M.Sc. Scientific Computing | English & German | WS+SS | 15 Mar (CLOSED?) / 30 Sep referenced | €1,500/sem (BW non-EU) | https://www.uni-heidelberg.de/en/study/all-subjects/scientific-computing/scientific-computing-master | Verify deadline — discrepancy. |
+| 107 | Uni Heidelberg | UHD | M.Sc. Computer Engineering | English & German | WS+SS | 30 Sep 2026 (WS); 30 Mar (SS) | €1,500/sem (BW non-EU) | https://www.uni-heidelberg.de/en/study/all-subjects/computer-engineering/computer-engineering-master | ZITI. Hardware-leaning CS. |
+| 108 | Uni Tübingen | UTu | M.Sc. Computer Science | English (German required) | WS+SS | 15 Jul 2026 (WS, intl) | €1,500/sem (BW non-EU) | https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/computer-science-master/ | English B2 + **German B2-C1 required for international** — likely excluded. GPA 2.5. |
+| 109 | Uni Tübingen | UTu | M.Sc. Machine Learning | English | WS only | 30 Apr 2026 (CLOSED) | €1,500/sem (BW non-EU) | https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/machine-learning-master/ | **GPA 2.0 cutoff. CLOSED for WS 26/27.** |
+| 110 | Uni Tübingen | UTu | M.Sc. Bioinformatics | English (variant A) | WS+SS | 15 Jul | €1,500/sem (BW non-EU) | https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/bioinformatics-master/ | OUT-OF-SCOPE (Bioinformatics). |
+| 111 | Uni Tübingen | UTu | M.Sc. Medical Informatics | English & German | WS+SS | 15 Jul | €1,500/sem (BW non-EU) | https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/medical-informatics-master/ | OUT-OF-SCOPE (Medical Inf). |
+| 112 | Uni Tübingen | UTu | M.A. Computational Linguistics | English | WS+SS | 15 Jul | €1,500/sem (BW non-EU) | https://uni-tuebingen.de/studium/studienangebot/verzeichnis-der-studiengaenge/detail/course/computerlinguistik-computational-linguistics-master/ | OUT-OF-SCOPE (Comp Ling). |
+| 113 | Uni Tübingen | UTu | M.Sc. Cognitive Science | English & German | WS+SS | unverified | €1,500/sem (BW non-EU) | https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/cognitive-science-master/ | OUT-OF-SCOPE (Cog Sci). |
+| 114 | Uni Freiburg | UFr | M.Sc. Computer Science | English | WS+SS | 1 Jun 2026 (non-EU, WS) | €1,500/sem (BW non-EU) | https://www.tf.uni-freiburg.de/en/study-programs/computer-science/m-sc-computer-science | Three options: Open Curriculum, AI specialisation, Cyber-Physical Systems. C1, no German req. |
+| 115 | Uni Konstanz | UKn | M.Sc. Computer and Information Science | English | WS+SS | 15 Apr 2026 (CLOSED for visa); 15 Jun (non-visa) | €1,500/sem (BW non-EU) | https://www.uni-konstanz.de/en/study/before-you-study/study-programmes/detail/computer-and-information-science/ | **GRE/GMAT mandatory for non-Lisbon-Convention (incl. India). 15 Apr CLOSED for visa applicants.** |
+| 116 | Uni Ulm | UUlm | M.Sc. Computer Science | English (mostly) | WS+SS | 18 Jul 2026 (WS) | €1,500/sem (BW non-EU) | https://www.uni-ulm.de/en/in/faculty/studies/courses/study-course/course/computer-science-master/ | Specialisations: databases, distributed/embedded systems, formal methods, IT security, HCI. |
+| 117 | Uni Ulm | UUlm | M.Sc. Computational Science and Engineering | English | WS+SS | unverified | €1,500/sem (BW non-EU) | https://www.uni-ulm.de/en/study/study-at-ulm-university/study-programmes/course-information/course/computational-science-and-engineering-master/ | CS-heavy. |
+| 118 | Goethe Frankfurt | GUF | M.Sc. Informatik (Computer Science) | English (English skills req) | WS+SS | 15 Jan 2026 (CLOSED for WS 26/27) | free | https://www.uni-frankfurt.de/35791857/Informatik__Master_of_Science | **WS 26/27 CLOSED.** Foreign-degree applicants 15 Jan. GPA 2.8. Nominally German with many English courses. |
+| 119 | Uni Mainz | UMa | M.Sc. Informatik (Computer Science) | German + English skills | WS+SS | 1 Sep 2026 (Master deadline) | free | https://www.studies.fb08.uni-mainz.de/computer-science/prospective-students/master-of-science-computer-science/ | Primarily German. International applicants need **DSH-2 / German C1.** |
+| 120 | Uni Mainz | UMa | M.Sc. Computer Science and Natural Sciences | German | WS+SS | 1 Sep | free | https://www.studium.uni-mainz.de/en/choosing-your-degree-program/courses-offered/computer-and-natural-sciences-msc/ | German-only likely. |
+| 121 | Uni Mainz | UMa | M.Sc. Computational Sciences | English & German | WS+SS | 1 Sep | free | https://www.studium.uni-mainz.de/en/choosing-your-degree-program/courses-offered/computational-sciences-msc/ | Verify language. |
+| 122 | Uni Mainz | UMa | M.Sc. Applied Bioinformatics | English & German | WS+SS | 1 Sep | free | https://www.studying.uni-mainz.de/applied-bioinformatics-m-sc/ | OUT-OF-SCOPE (Bioinformatics). |
+| 123 | Uni Marburg | UMR | M.Sc. Computer Science | English | WS+SS | 15 Jul 2026 (WS); also 1 May–30 Jun window | free | https://www.uni-marburg.de/en/studying/after-your-first-degree/masters-programs/degree-programs/computer-science-msc | English-only. Admission-free. |
+| 124 | Uni Marburg | UMR | M.Sc. Data Science | English & German | WS+SS | 15 Jul 2026 | free | https://www.uni-marburg.de/en/studying/after-your-first-degree/masters-programs/degree-programs/data-science-msc | OUT-OF-SCOPE (Data Science). |
+| 125 | Uni Saarland | USaar | M.Sc. Computer Science | English | WS+SS | 15 May 2026 (WS) | free | https://www.uni-saarland.de/en/study/programmes/master/informatics.html | **GRE General OR Indian GATE required for non-EHEA from SS 2026 onwards** (incl. WS 26/27). APS for India. C1 English. |
+| 126 | Uni Saarland | USaar | M.Sc. Cybersecurity | English | WS+SS | 15 May | free | https://saarland-informatics-campus.de/en/studium-studies/master-english/faq-cyber-application/ | **GRE/GATE required.** |
+| 127 | Uni Saarland | USaar | M.Sc. Entrepreneurial Cybersecurity | English | WS+SS | 15 May | free | https://cysec.uni-saarland.de/master/ecs/ | M.Eng. degree. 50% CS + 50% startup project. |
+| 128 | Uni Saarland | USaar | M.Sc. Data Science and AI | English | WS+SS | 15 May | free | https://saarland-informatics-campus.de/en/studium-studies/data-science-and-artificial-intelligence-master/ | OUT-OF-SCOPE (Data Science) + GRE/GATE. |
+| 129 | Uni Saarland | USaar | M.Sc. Embedded Systems | English | WS+SS | 15 May | free | https://www.mygermanuniversity.com/master/embedded-systems/402 | GRE/GATE required. |
+| 130 | Uni Saarland | USaar | M.Sc. Visual Computing | English | WS+SS | 15 May | free | https://saarland-informatics-campus.de/en/msc-visual-computing/ | GRE/GATE required. |
+| 131 | Uni Saarland | USaar | M.Sc. Bioinformatics | English | WS+SS | 15 May | free | https://www.uni-saarland.de/en/study/programmes/master/bioinformatics.html | OUT-OF-SCOPE (Bioinformatics). |
+| 132 | Uni Saarland | USaar | M.Sc. Media Informatics | English | WS+SS | 15 May | free | https://www.uni-saarland.de/en/study/programmes/master/media-informatics.html | GRE/GATE required (likely). |
+| 133 | Uni Saarland | USaar | M.Sc. Language and Communication Technologies (LCT) | English | WS only | 15 May | free | https://www.uni-saarland.de/en/study/programmes/master/lct.html | OUT-OF-SCOPE (Comp Linguistics). EM dual-degree. |
+| 134 | Uni Saarland | USaar | M.Sc. Language Science and Technology | English | WS+SS | 15 May | free | https://www.uni-saarland.de/en/study/programmes/master/lst.html | OUT-OF-SCOPE (Comp Ling). |
+| 135 | Uni Saarland | USaar | M.Sc. Mathematics and Computer Science | English | WS+SS | 15 May | free | https://saarland-informatics-campus.de/en/studium-studies/master-english/ | Math + CS hybrid. Verify GRE rule. |
+| 136 | RPTU Kaiserslautern | RPTU | M.Sc. Computer Science | English (German A1 during studies) | WS+SS | 30 Apr 2026 (CLOSED); SS27 31 Oct | free | https://applymsc.informatik.uni-kl.de/ | **WS 26/27 CLOSED. SS27 open until 31 Oct 2026.** €60 assessment fee. IELTS 6.5. A1 German within first year. |
+| 137 | RPTU Kaiserslautern | RPTU | M.Sc. Embedded Computing Systems | English | WS+SS | 30 Apr likely CLOSED; 31 Oct SS27 | free | https://eit.rptu.de/en/esy/program-1 | EE faculty. |
+| 138 | RPTU Kaiserslautern | RPTU | M.Sc. Automation & Control | English | WS+SS | unverified | free | https://rptu.de/en/international/master/prospective-students/master-programs/master-programs-in-english | Borderline — control + embedded. |
+| 139 | RPTU Kaiserslautern | RPTU | M.Sc. Software Engineering for Embedded Systems | English | unverified (distance) | unverified | tuition (Fernstudium) | https://fernstudium.rptu.de/en/distance-learning-programmes/technology-engineering-and-natural-sciences/software-engineering-for-embedded-systems | Distance learning. |
+| 140 | Uni Bonn | UB | M.Sc. Computer Science | English | WS+SS | **15 May–1 Jun 2026 (non-EEA, single round)** | free (~€330 sem fee) | https://www.informatik.uni-bonn.de/en/studies/master-programs/master-computer-science/msc-cs | 4 tracks: Algorithmics, Graphics/Vision/Audio, ICM, Intelligent Systems. C1 English. 2 referees. |
+| 141 | Uni Bonn | UB | M.Sc. Cyber Security | English | WS+SS | 15 May–1 Jun 2026 (non-EEA) | free | https://www.informatik.uni-bonn.de/en/studies/master-programs/master-cyber-security/msc-cysec | Specialise in CS or one of 4 CS tracks. |
+| 142 | Uni Bonn | UB | M.Sc. Life Science Informatics (b-it) | English | WS only | 1 Mar 2026 (CLOSED) | free | https://www.uni-bonn.de/en/studying/degree-programs/degree-programs-a-z/life-science-informatics-msc | OUT-OF-SCOPE (Bioinf). Joint b-it + Fraunhofer. |
+| 143 | Uni Münster | WWU | M.Sc. Information Systems | English | WS+SS | 15 Jul 2026 | free | https://www.wi.uni-muenster.de/prospective-students/our-courses-study/master-science-information-systems | OUT-OF-SCOPE (business IS). |
+| 144 | Uni Münster | WWU | M.Sc. Geoinformatics and Spatial Data Science | English | WS+SS | 31 May 2026 (non-EU) | free | https://www.uni-muenster.de/Geoinformatics/en/studying/msc/index.html | OUT-OF-SCOPE (Geoinformatics). |
+| 145 | Uni Münster | WWU | M.Sc. Informatik | German | WS+SS | unverified | free | https://www.uni-muenster.de/Informatik/en/ | German-only. DSH-2. |
+| 146 | Uni Köln | UKo | M.Sc. Computational Sciences | English | WS only | 15 Jul 2026 | free | https://mathnat.uni-koeln.de/en/studies/master/computational-sciences | Math-Nat faculty; CS-heavy with computational methods. |
+| 147 | Uni Köln | UKo | M.Sc. Informatik | German (Eng-friendly) | WS+SS | 15 Jul 2026 | free | https://cs.uni-koeln.de/en/studieninteressierte/msc-informatik | English B2 required; literature in English. |
+| 148 | Uni Köln | UKo | M.Sc. Information Systems | English & German | WS+SS | 15 Jul 2026 | free | https://wiso.uni-koeln.de/en/studies/master/master-information-systems | OUT-OF-SCOPE (business IS). German C1 + English B2. |
+| 149 | Uni Paderborn | UPB | M.Sc. Computer Science | English | WS+SS | 31 May 2026 (international) | free | https://www.uni-paderborn.de/en/studyoffer/course_of_study/computer-science-master | English-taught. uni-assist for non-German degrees. |
+| 150 | Uni Paderborn | UPB | M.Sc. Computer Engineering | English | WS+SS | 31 May 2026 (international) | free | https://www.uni-paderborn.de/en/studyoffer/course_of_study/computer-engineering-master | German not required. |
+| 151 | Uni Siegen | USie | M.Sc. Computer Science (ETI International — Visual Computing) | English | WS only (non-EU) | unverified (portal opens 1 Jan 2026; lang cert by 30 Apr) | free | https://www.uni-siegen.de/en/eti-international-master-in-computer-science-visual-computing | Track: Visual Computing. |
+| 152 | Uni Siegen | USie | M.Sc. Computer Science (ETI International — CISS) | English | WS only (non-EU) | unverified (portal opens 1 Jan 2026) | free | https://www.uni-siegen.de/en/eti-international-master-in-computer-science | Track: Complex&Intelligent SW Systems. |
+| 153 | Uni Siegen | USie | M.Sc. Computer Science (ETI International — Embedded Systems) | English | WS only (non-EU) | unverified | free | https://www.uni-siegen.de/en/eti-international-master-in-computer-science-embedded-systems | Track: Embedded Systems. |
+| 154 | Uni Siegen | USie | M.Sc. Computer Science (ETI International — Medical Informatics) | English & German | WS only | unverified | free | https://www.uni-siegen.de/en/study/master/computer-science | OUT-OF-SCOPE (Medical Inf). |
+| 155 | Uni Duisburg-Essen | UDE | M.Sc. Computer Engineering (ISE) | English (German B2 required) | WS+SS | 15 Jul 2026 (WS, non-EU) | free (~€625 sem fee) | https://www.uni-due.de/iw/en/study/m-ce.php | **German B2 required at enrollment** despite English instruction. Tracks: Intelligent Networked Systems / Interactive Systems & Visualization. |
+| 156 | Uni Duisburg-Essen | UDE | M.Sc. Applied Computer Science | German | WS+SS | unverified | free | https://www.uni-due.de/computer-science/study-courses | German-taught primarily. |
+| 157 | Uni Bielefeld | UBie | M.Sc. Intelligent Systems / IISY | English | WS+SS | 15 Jul 2026 (WS) | free | https://www.uni-bielefeld.de/fakultaeten/technische-fakultaet/studium/master/iisy/ | **GPA ≥ 2.7 required** (German scale). B2 English. 30 ECTS CS + 10 ECTS Math prereq. |
+| 158 | Uni Bielefeld | UBie | M.Sc. Data Science | English | WS only | 15 Aug 2026 | free | https://www.uni-bielefeld.de/fakultaeten/wirtschaftswissenschaften/studium-und-lehre/studiengaenge/master_data_science/ | OUT-OF-SCOPE (Data Science). |
+| 159 | Uni Lübeck | ULue | M.Sc. Computer Science | English & German | WS+SS | 15 Jul 2026 (WS) | free | https://www2.uni-luebeck.de/en/study-program/computer-science-and-mathematics/information-technology/masters-program-in-computer-science/ | Bilingual modules. Specialisations: Bioinf&Sys Bio, SW Sys Eng, Data Science&AI. |
+| 160 | Uni Lübeck | ULue | M.Sc. IT Security | English | WS+SS | 15 Jul (WS); 15 Jan (SS) | free | https://www.uni-luebeck.de/en/university-education/degree-programmes/it-security/masters-degree/profile.html | English with optional German electives. |
+| 161 | Uni Lübeck | ULue | M.Sc. Robotics and Autonomous Systems | English | WS only | 15 Sep 2026 (EU); non-EU likely earlier | free | https://www2.uni-luebeck.de/en/study-program/technology/robotics-and-autonomous-systems/masters-degree-program-robotics-and-autonomous-systems/ | English since WS 19/20. uni-assist for non-EU. |
+| 162 | Uni Lübeck | ULue | M.Sc. Media Informatics | English & German | WS+SS | unverified | free | https://www2.uni-luebeck.de/en/study-program/computer-science-and-mathematics/media-informatics/masters-degree-program-in-media-informatics/ | Bilingual. |
+| 163 | Uni Lübeck | ULue | M.Sc. Entrepreneurship in Digital Technologies | English & German | WS+SS | unverified | free | https://www.uni-luebeck.de/en/university-education/degree-programmes/entrepreneurship-in-digital-technologies.html | CS+business hybrid. |
+| 164 | Uni Lübeck | ULue | M.Sc. Medical Informatics | German + English | WS+SS | unverified | free | https://www.uni-luebeck.de/en/university-education/degree-programmes/ | OUT-OF-SCOPE (Medical Inf). |
+| 165 | Uni Hamburg (UHH) | UHH | M.Sc. Intelligent Adaptive Systems | English | WS only | unverified (typically 31 Mar / 1 Apr) | free | https://www.inf.uni-hamburg.de/en/studies/master/ias.html | Research-oriented. AI/Robotics/Neuro-cog. |
+| 166 | Uni Hamburg (UHH) | UHH | M.Sc. Data Science and AI | English | WS only | 31 Mar likely (verify) | free | https://www.inf.uni-hamburg.de/en/studies/master/dsai.html | OUT-OF-SCOPE (Data Science). STiNE portal. |
+| 167 | Uni Hamburg (UHH) | UHH | M.Sc. Informatik (Computer Science) | German + English tracks | WS+SS | unverified | free | https://www.inf.uni-hamburg.de/en/studies/master/inf.html | Specialisations: Data Science, HCI, IT-Sec, SE, Theoretical CS. |
+| 168 | Uni Hamburg (UHH) | UHH | M.Sc. Bioinformatics | German & English | WS only | unverified | free | https://www.inf.uni-hamburg.de/en/studies/master/bioinf.html | OUT-OF-SCOPE (Bioinformatics). |
+| 169 | TU Braunschweig | TUBS | M.Sc. Computational Sciences in Engineering | English | WS+SS | 15 Jul 2026 (WS) | free | https://www.tu-braunschweig.de/en/cse | English-taught CSE. |
+| 170 | TU Braunschweig | TUBS | M.Sc. Computer Science (Informatik) | German | WS+SS | unverified | free | https://www.tu-braunschweig.de/en/degree-programmes/computer-science-master | Primarily German (DSH 1+). |
+| 171 | TU Braunschweig | TUBS | M.Sc. Data Science | German + English | WS+SS | unverified | free | https://www.tu-braunschweig.de/en/degree-programmes | OUT-OF-SCOPE (Data Science). |
+| 172 | Uni Osnabrück | UOs | M.Sc. Cognitive Science | English | WS+SS | 13 Oct 2025–31 Jan 2026 (window for prior cycle, verify WS 26/27) | free | https://www.ikw.uni-osnabrueck.de/en/prospective_students/master_cognitive_science.html | OUT-OF-SCOPE (Cog Sci, non-CS faculty). |
+| 173 | Uni Osnabrück | UOs | M.Sc. Cognitive Computing (part-time) | English | WS only | unverified | **€5,000/sem (paid)** | https://www.uni-osnabrueck.de/en/studying/our-study-programs/study-programs-from-a-z/cognitive-computing-master-of-science-part-time | OUT-OF-SCOPE (paid + non-CS faculty). |
+| 174 | Uni Rostock | URo | M.Sc. Computer Science International | English | WS+SS | 1 Apr–31 May 2026 (WS) | free | https://www.informatik.uni-rostock.de/studium-lehre/master-studiengaenge/computer-science-international/ | 100% English. Specialisations: Information Systems / Complex Systems. TOEFL 94 / IELTS 7.0. |
+| 175 | Uni Rostock | URo | M.Sc. Computational Science and Engineering | English | WS+SS | 31 May 2026 (WS) | free | https://www.ief.uni-rostock.de/en/studiengaenge/master-studiengaenge-2/computational-science-and-engineering-msc/cse-master-spso-2018/ | TOEFL 90 / IELTS 6.5. |
+| 176 | Uni Kiel (CAU) | CAU | M.Sc. Computer Science (English programme) | English | WS+SS | 15 Jul / 1 Aug 2026 (WS) | free | https://www.inf.uni-kiel.de/en/studies/programs/computer-science-master-program-in-english | Admission-free. Aptitude assessment. uni-assist for non-German degrees. |
+| 177 | Uni Trier | UTr | M.Sc. Data Science | English | WS+SS | 15 Sep 2026 | free | https://www.uni-trier.de/en/studium/studienangebot/studiengaenge-von-a-z/english-taught-masters-courses-1 | OUT-OF-SCOPE (Data Science). |
+| 178 | Uni Trier | UTr | M.Sc. Natural Language Processing | English | WS+SS | 15 Sep 2026 | free | https://www.uni-trier.de/en/studium/studienangebot/studiengaenge-von-a-z/english-taught-masters-courses-1/natural-language-processing-master-of-science-1-subject-study-information-en | OUT-OF-SCOPE (Comp Ling). |
+| 179 | Uni Trier | UTr | M.Sc. Informatik | German | WS+SS | unverified | free | https://www.uni-trier.de/en/university/faculties-and-departments/faculty-iv/study-courses/computer-science/ | German-only. |
+| 180 | Uni Jena (FSU) | FSU | M.Sc. Computer Science (Informatik) | German | WS+SS | likely 15 Jul | free | https://www.uni-jena.de/en/6680/m-sc-computer-science | German (DSH-2). |
+| 181 | Uni Jena (FSU) | FSU | M.Sc. Computational and Data Science | English (with German req) | WS+SS | 15 Jul 2026 | free | https://www.uni-jena.de/en/6630/m-sc-computational-and-data-science | "English-taught" BUT international applicants must provide DSH-2 / TestDaF. OUT-OF-SCOPE (Data + German). |
+| 182 | MLU Halle | MLU | M.Sc. Informatik | German | WS+SS | unverified (admission-free) | free | https://studienangebot.uni-halle.de/informatik-master-120 | German. |
+| 183 | MLU Halle | MLU | M.Sc. Bioinformatik | German | WS+SS | unverified | free | https://studienangebot.uni-halle.de/bioinformatik-master-120 | OUT-OF-SCOPE (Bioinformatics). |
+| 184 | Uni Kassel | UKas | M.Sc. Computer Science | English (from WS 26/27) | WS+SS | 15 Jul 2026 (WS 26/27) | free | https://www.uni-kassel.de/uni/en/studium/computer-science-master.html | **Switching to English from WS 26/27.** Specialisations: CIDA, SW Dev, CS for Digital Society, Environmental Computing. |
+| 185 | Uni Göttingen | UGoe | M.Sc. Applied Computer Science | English (selected tracks German-mandatory) | WS+SS | unverified (15 May for non-EU typical) | free | https://www.uni-goettingen.de/en/applied+computer+science+%28m.sc.%29/673944.html | Two concentrations: systems vs application. Online aptitude test + video interview. |
 
-Programs added in groups by university below.
+---
 
+## Summary statistics
+
+- **Total program rows:** 185 (after deduplication and cross-check between slices; some agents counted Borderline programs twice).
+- **In-scope candidates pre-filter (rough):** ~85–95 programs after removing OUT-OF-SCOPE flags, TUM tuition rows, GRE-required rows, and CLOSED-WS-26/27 rows.
+- **Universities with no English MSc CS at all:** Uni Münster (only English programs are out-of-scope IS/Geoinformatics; Informatik is German), Uni Mainz (German + DSH-2 required), Uni Halle (German), Uni Trier (English programs are OUT-OF-SCOPE), Uni Jena (English program demands DSH-2).
+- **Universities where MSc Informatik is German but other CS programs are English:** HU Berlin, FU Berlin, FAU, KIT, OVGU, Uni Hamburg.
+
+## Critical findings (carry forward to Phase 2)
+
+1. **TUM €6,000/sem confirmed** — disqualified by Section 3 hard filter 5.
+2. **FAU now requires GRE/GATE >60th percentile for non-EU starting WS 26/27** (recent change beyond Section 12 known pitfall) — disqualifies FAU for our applicant. Also new €100 non-EU app fee + 3-application limit.
+3. **Saarland requires GRE General OR Indian GATE for non-EHEA from SS 2026** (Section 12 confirmed) — disqualifies all USaar CS-discipline programs.
+4. **KIT requires GRE/GATE for MSc CS** (new) — disqualifies KIT MSc CS.
+5. **Konstanz requires GRE/GMAT for non-Lisbon-Convention** — disqualifies Konstanz.
+6. **RWTH Aachen WS 26/27 closed for non-EU (1 March)** — and GRE required. SS 2027 only.
+7. **RPTU Kaiserslautern WS 26/27 closed (30 April)** — SS 2027 deadline 31 Oct 2026.
+8. **Uni Stuttgart MSc CS / INFOTECH WS 26/27 closed (15 January)**.
+9. **Goethe Frankfurt MSc Informatik WS 26/27 closed (15 January)**.
+10. **Heidelberg Data and CS WS 26/27 closed (15 March)** — also OUT-OF-SCOPE.
+11. **Tübingen MSc ML WS 26/27 closed (30 April)** + 2.0 GPA cutoff — Reach only / now closed.
+12. **Tübingen MSc CS requires German B2-C1 for international** — disqualifies for our applicant.
+13. **HU Berlin and FU Berlin MSc Informatik are German** — disqualifies.
+14. **HPI restructure**: Cybersecurity, IT-Systems, Software Systems, Data Engineering being absorbed into MSc CS as tracks. Need verification in Phase 3.
+15. **TU Chemnitz programs require A1 German at admission** — borderline; may disqualify under hard filter 4 (no German for application).
+16. **TU Berlin MSc CS deadline is 31 August 2026** — latest WS 26/27 deadline in scope.
+17. **Uni Bonn non-EEA window 15 May–1 June 2026** — extremely tight, single round.
+18. **Uni Kassel switching to English from WS 26/27** — new offering, verify carefully.
+19. **Bayreuth GPA 2.5 cutoff** confirmed — applicant 2.4 just clears.
+20. **TU Darmstadt paper docs by post** confirmed (Section 12 pitfall).
+
+## Out-of-scope program titles encountered (excluded by Section 4.2)
+
+Data Science / Big Data / Data Engineering / Data Analytics / DSAI:
+- RWTH Data Science, FU Berlin Data Science, FAU Data Science, USaar DSAI, UMR Data Science, UTr Data Science, UBie Data Science, TUBS Data Science, UHH DSAI, TUM DEA, HPI Data Engineering, OVGU DKE, Marburg Data Science.
+
+Bioinformatics / Medical Informatics / Life Science Informatics:
+- LMU Bioinformatics, TUM Bioinformatics, UTu Bioinformatics, UTu Medical Informatics, USaar Bioinformatics, FU Berlin Bioinformatics, ULue Medical Informatics, UHH Bioinformatics, MLU Bioinformatik, UHD scientific computing partial, Mainz Applied Bioinformatics, USie Medical Informatics, OVGU Medical Systems, RWTH Robotic Systems Eng (paid), Bonn LSI.
+
+Information Systems / Wirtschaftsinformatik:
+- WWU IS, HUB IS, FAU IIS, UKo IS, UPass IS.
+
+Computational Linguistics / NLP / Language Tech:
+- LMU Comp Linguistics, USaar LCT, USaar LST, UTu Comp Linguistics, UTr NLP, UP Cognitive Systems.
+
+Geoinformatics:
+- WWU Geoinformatics, UAug Geoinformatics.
+
+Cognitive Science (non-CS faculty):
+- UTu Cognitive Science, UOs Cognitive Science, UOs Cognitive Computing, TUB Computational Neuro, HUB Computational Neuro.
+
+These are listed for traceability. They will be marked excluded in `02_filter_decisions.md` with reason "Section 4.2 out-of-scope title".
+
+---
+
+## Next steps
+
+→ **Phase 2:** Apply Section 3 hard filters and Section 4 in-scope rules row-by-row. Produce `02_filter_decisions.md` with per-program kept/excluded reasoning + Tier A/B URL. Expected survivors: ~30–50 programs.
